@@ -24,3 +24,42 @@ function createAdder(x){
 const add5 = createAdder(5);
 
 console.log(add5(10));
+
+//Q13.
+
+function outer(){
+    let count = 0;
+    function inner(){
+        count++;
+        console.log(count);
+    }
+    return inner;
+}
+
+const counter = outer();
+counter();
+counter();
+counter();
+
+//Q14.
+
+function createGreeting(message){
+    return function person(name){
+        console.log(message + " " +  name)
+    }
+}
+
+const hi = createGreeting("Hi");
+hi("Bijoy");
+
+
+//Q15.
+
+function multiply(x){
+    return function multiplicand(y){
+        return x * y;
+    }
+}
+
+const double = multiply(2);
+console.log(double(8));
